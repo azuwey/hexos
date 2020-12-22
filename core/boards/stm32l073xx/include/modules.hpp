@@ -1,3 +1,6 @@
+#ifndef __STM32L073XX_MODULES
+#define __STM32L073XX_MODULES
+
 #define CORTEX_MODULE_SUPPORT
 #define FLASH_MODULE_SUPPORT
 #define PWR_MODULE_SUPPORT
@@ -20,3 +23,8 @@
 #define USART_MODULE_SUPPORT
 #define SPI_MODULE_SUPPORT
 #define USB_MODULE_SUPPORT
+
+#include "flash.hpp"
+#include "gpio.hpp"
+
+#endif // __STM32L073XX_MODULES
