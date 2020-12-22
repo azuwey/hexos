@@ -1,0 +1,6 @@
+{
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 0 }",
+    "C_Cpp.default.cppStandard": "gnu++17",
+    "C_Cpp.default.cStandard": "gnu17",
+    "cortex-debug.enableTelemetry": false
+}
