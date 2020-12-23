@@ -4,3 +4,5 @@
 *.map
 *.su
 *.cortex*.json
+!build/
+build/*

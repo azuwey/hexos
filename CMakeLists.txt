@@ -1,0 +1,27 @@
+cmake_minimum_required(VERSION 3.19.2)
+project("HexOS" LANGUAGES CXX ASM)
+set(BOARD stm32l073xx)
+set(MODEL rz)
+
+# ARM Toolchain setup
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR ARM)
+set(TOOLCHAIN_PREFIX arm-none-eabi-)
+set(CMAKE_ASM_COMPILER ${TOOLCHAIN_PREFIX}as)
+set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}g++)
+set(CMAKE_LINKER ${TOOLCHAIN_PREFIX}ld)
+set(CMAKE_OBJCOPY ${TOOLCHAIN_PREFIX}objcopy)
+set(CMAKE_SIZE_UTIL ${TOOLCHAIN_PREFIX}size)
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+
+# Compiler standard setup
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS ON)
+
+# Source settings
+set(CPP_SOURCES source/main.cpp)
+add_library(STARTUP_FILE core/boards/${BOARD}/startup.s)
+add_executable(firmware.bin ${CPP_SOURCES})

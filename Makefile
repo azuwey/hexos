@@ -2,7 +2,7 @@
 BOARD := stm32l073xx
 MODEL := rz
 CPU := cortex-m0plus
-TOOLCHAIN_PATH := ~/.local/opt/gcc-arm-none-eabi-9-2020-q2-update
+TOOLCHAIN_PATH := /usr/bin
 BUILD_DIR := build
 TARGET := firmware
 OPTIMIZATION := -Os
@@ -27,10 +27,10 @@ core/boards/$(BOARD)/startup.s
 LINKER_FILE := core/boards/$(BOARD)/linker/$(MODEL).ld
 
 # Toolchain definitions
-CC := $(TOOLCHAIN_PATH)/bin/arm-none-eabi-g++
-LD := $(TOOLCHAIN_PATH)/bin/arm-none-eabi-ld
-CP := $(TOOLCHAIN_PATH)/bin/arm-none-eabi-objcopy
-AS := $(TOOLCHAIN_PATH)/bin/arm-none-eabi-as
+CC := $(TOOLCHAIN_PATH)/arm-none-eabi-g++
+LD := $(TOOLCHAIN_PATH)/arm-none-eabi-ld
+CP := $(TOOLCHAIN_PATH)/arm-none-eabi-objcopy
+AS := $(TOOLCHAIN_PATH)/arm-none-eabi-as
 
 # Compiler flags
 CFLAGS := ${CPP_INCLUDES} -mcpu=$(CPU) -mthumb -std=${STD} -c
