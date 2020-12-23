@@ -277,8 +277,7 @@ typedef struct {
 } t_GPIOx;
 } // namespace TYPEDEFS
 
-namespace HAL {
-} // namespace HAL
+namespace HAL {} // namespace HAL
 } // namespace GPIO
 
 namespace REGISTERS {

@@ -25,7 +25,7 @@
 #define USB_MODULE_SUPPORT
 
 #include "flash.hpp"
-#include "rcc.hpp"
 #include "gpio.hpp"
+#include "rcc.hpp"
 
 #endif // __STM32L073XX_MODULES

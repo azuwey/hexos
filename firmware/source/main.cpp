@@ -7,7 +7,7 @@
 int main(void) {
     REGISTERS::RCC.IOPENR.BIT.IOPAEN = 0x01U;
     // REGISTERS::FLASH.ACR.BIT.PRE_READ = 0x01U;
-    while(1) {
+    while (1) {
         // REGISTERS::GPIOA.MODER.WORD = 0xEBFFF4FFU;
     }
 }

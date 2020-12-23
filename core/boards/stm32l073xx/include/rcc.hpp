@@ -453,8 +453,7 @@ typedef struct __attribute__((packed)) {
 } t_RCC;
 } // namespace TYPEDEFS
 
-namespace HAL {
-} // namespace HAL
+namespace HAL {} // namespace HAL
 } // namespace RCC
 
 namespace REGISTERS {

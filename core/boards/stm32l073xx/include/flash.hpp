@@ -139,8 +139,7 @@ typedef struct {
 } t_FLASH;
 } // namespace TYPEDEFS
 
-namespace HAL {
-} // namespace HAL
+namespace HAL {} // namespace HAL
 } // namespace FLASH
 
 namespace REGISTERS {
