@@ -13,10 +13,10 @@ DEAD_CODE_ELLIMINATION := -ffunction-sections -fdata-sections
 STD := gnu++17
 
 CPP_SOURCES := \
-source/main.cpp
+firmware/source/main.cpp
 
 CPP_INCLUDES := \
--I include \
+-I firmware/include \
 -I core/common/include \
 -I core/boards/$(BOARD)/include
 
@@ -33,7 +33,7 @@ CP := $(TOOLCHAIN_PATH)/arm-none-eabi-objcopy
 AS := $(TOOLCHAIN_PATH)/arm-none-eabi-as
 
 # Compiler flags
-CFLAGS := ${CPP_INCLUDES} -mcpu=$(CPU) -mthumb -std=${STD} -c
+CFLAGS := ${CPP_INCLUDES} -MD -mcpu=$(CPU) -mthumb -std=${STD}
 CFLAGS += ${ERRORS} ${OPTIMIZATION} ${DEAD_CODE_ELLIMINATION}
 
 # Linker flags
@@ -56,7 +56,7 @@ vpath %.s $(sort $(dir $(ASM_SOURCES)))
 all: ${BUILD_DIR}/${TARGET}.bin
 
 $(BUILD_DIR)/%.o: %.cpp
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(BUILD_DIR)/%.o: %.s
 	$(AS) $(ASFLAGS) -o $@ $<
@@ -69,3 +69,5 @@ ${BUILD_DIR}/${TARGET}.bin: ${BUILD_DIR}/${TARGET}.elf
 
 clean:
 	rm -fr $(BUILD_DIR)/*.o $(BUILD_DIR)/*.elf $(BUILD_DIR)/*.bin $(BUILD_DIR)/*.map
+
+-include $(OBJECTS:.o=.d)
