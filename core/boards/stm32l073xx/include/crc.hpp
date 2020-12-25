@@ -63,6 +63,6 @@ namespace HAL {} // namespace HAL
 } // namespace CRC
 
 namespace REGISTERS {
-inline CRC::TYPEDEFS::t_CRC &CRC = *((CRC::TYPEDEFS::t_CRC *)CRC::ADDRESSES::BASE_ADDRESS);
+inline CRC::TYPEDEFS::t_CRC &r_CRC = *((CRC::TYPEDEFS::t_CRC *)CRC::ADDRESSES::BASE_ADDRESS);
 } // namespace REGISTERS
 #endif // __STM32L073XX_CRC

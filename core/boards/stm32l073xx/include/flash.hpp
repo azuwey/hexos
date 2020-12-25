@@ -143,6 +143,6 @@ namespace HAL {} // namespace HAL
 } // namespace FLASH
 
 namespace REGISTERS {
-inline FLASH::TYPEDEFS::t_FLASH &FLASH = *((FLASH::TYPEDEFS::t_FLASH *)FLASH::ADDRESSES::BASE_ADDRESS);
+inline FLASH::TYPEDEFS::t_FLASH &r_FLASH = *((FLASH::TYPEDEFS::t_FLASH *)FLASH::ADDRESSES::BASE_ADDRESS);
 } // namespace REGISTERS
 #endif // __STM32L073XX_FLASH

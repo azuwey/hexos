@@ -457,6 +457,6 @@ namespace HAL {} // namespace HAL
 } // namespace RCC
 
 namespace REGISTERS {
-inline RCC::TYPEDEFS::t_RCC &RCC = *((RCC::TYPEDEFS::t_RCC *)RCC::ADDRESSES::BASE_ADDRESS);
+inline RCC::TYPEDEFS::t_RCC &r_RCC = *((RCC::TYPEDEFS::t_RCC *)RCC::ADDRESSES::BASE_ADDRESS);
 } // namespace REGISTERS
 #endif // __STM32L073XX_RCC
