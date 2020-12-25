@@ -15,7 +15,7 @@ const inline t_uint32 BASE_ADDRESS_H = ((t_uint32)0x50001C00U);
 
 namespace TYPEDEFS {
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 MODE0 : 0x02U;
         __RW t_uint32 MODE1 : 0x02U;
         __RW t_uint32 MODE2 : 0x02U;
@@ -37,7 +37,7 @@ typedef union {
 } t_MODER;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 OT0 : 0x01U;
         __RW t_uint32 OT1 : 0x01U;
         __RW t_uint32 OT2 : 0x01U;
@@ -60,7 +60,7 @@ typedef union {
 } t_OTYPER;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 OSPEED0 : 0x02U;
         __RW t_uint32 OSPEED1 : 0x02U;
         __RW t_uint32 OSPEED2 : 0x02U;
@@ -82,7 +82,7 @@ typedef union {
 } t_OSPEEDR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 PUPD0 : 0x02U;
         __RW t_uint32 PUPD1 : 0x02U;
         __RW t_uint32 PUPD2 : 0x02U;
@@ -104,7 +104,7 @@ typedef union {
 } t_PUPDR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __R t_uint32 ID0 : 0x01U;
         __R t_uint32 ID1 : 0x01U;
         __R t_uint32 ID2 : 0x01U;
@@ -127,7 +127,7 @@ typedef union {
 } t_IDR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 OD0 : 0x01U;
         __RW t_uint32 OD1 : 0x01U;
         __RW t_uint32 OD2 : 0x01U;
@@ -150,7 +150,7 @@ typedef union {
 } t_ODR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __W t_uint32 BS0 : 0x01U;
         __W t_uint32 BS1 : 0x01U;
         __W t_uint32 BS2 : 0x01U;
@@ -188,7 +188,7 @@ typedef union {
 } t_BSRR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 LCK0 : 0x01U;
         __RW t_uint32 LCK1 : 0x01U;
         __RW t_uint32 LCK2 : 0x01U;
@@ -212,7 +212,7 @@ typedef union {
 } t_LCKR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 AFSEL0 : 0x04U;
         __RW t_uint32 AFSEL1 : 0x04U;
         __RW t_uint32 AFSEL2 : 0x04U;
@@ -226,7 +226,7 @@ typedef union {
 } t_AFRL;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 AFSEL8 : 0x04U;
         __RW t_uint32 AFSEL9 : 0x04U;
         __RW t_uint32 AFSEL10 : 0x04U;
@@ -240,7 +240,7 @@ typedef union {
 } t_AFRH;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __W t_uint32 BR0 : 0x01U;
         __W t_uint32 BR1 : 0x01U;
         __W t_uint32 BR2 : 0x01U;
@@ -262,7 +262,7 @@ typedef union {
     __W t_uint32 WORD;
 } t_BRR;
 
-typedef struct {
+typedef struct __attribute__((packed)) {
     t_MODER MODER;
     t_OTYPER OTYPER;
     t_OSPEEDR OSPEEDR;

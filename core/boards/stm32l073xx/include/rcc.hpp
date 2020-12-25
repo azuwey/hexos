@@ -9,8 +9,8 @@ const inline t_uint32 BASE_ADDRESS = ((t_uint32)0x40021000U);
 } // namespace ADDRESSES
 
 namespace TYPEDEFS {
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 HSI16ON : 0x01U;
         __RW t_uint32 HSI16KERON : 0x01U;
         __R t_uint32 HSI16RDYF : 0x01U;
@@ -34,8 +34,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_CR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __R t_uint32 HSI16CAL : 0x08U;
         __RW t_uint32 HSI16TRIM : 0x05U;
         __RW t_uint32 MSIRANGE : 0x03U;
@@ -45,8 +45,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_ICSCR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 HSI48ON : 0x01U;
         __R t_uint32 HSI48RDY : 0x01U;
         __RW t_uint32 HSI48DIV6EN : 0x01U;
@@ -57,8 +57,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_CRRCR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 SW : 0x02U;
         __R t_uint32 SWS : 0x02U;
         __RW t_uint32 HPRE : 0x04U;
@@ -77,8 +77,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_CFGR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __R t_uint32 LSIRDYIE : 0x01U;
         __R t_uint32 LSERDYIE : 0x01U;
         __R t_uint32 HSI16RDYIE : 0x01U;
@@ -92,8 +92,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_CIER;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __R t_uint32 LSIRDYIEF : 0x01U;
         __R t_uint32 LSERDYIEF : 0x01U;
         __R t_uint32 HSI16RDYIEF : 0x01U;
@@ -108,8 +108,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_CIFR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __W t_uint32 LSIRDYC : 0x01U;
         __W t_uint32 LSERDYC : 0x01U;
         __W t_uint32 HSI16RDYC : 0x01U;
@@ -124,8 +124,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_CICR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 IOPARST : 0x01U;
         __RW t_uint32 IOPBRST : 0x01U;
         __RW t_uint32 IOPCRST : 0x01U;
@@ -138,8 +138,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_IOPRSTR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 DMARST : 0x01U;
         t_uint32 /* RESERVED */ : 0x07U;
         __RW t_uint32 MIFRST : 0x01U;
@@ -156,8 +156,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_AHBRSTR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 SYSCFGRST : 0x01U;
         t_uint32 /* RESERVED */ : 0x01U;
         __RW t_uint32 TIM21RST : 0x01U;
@@ -176,8 +176,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_APB2RSTR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 TIM2RST : 0x01U;
         __RW t_uint32 TIM3RST : 0x01U;
         t_uint32 /* RESERVED */ : 0x02U;
@@ -207,8 +207,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_APB1RSTR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 IOPAEN : 0x01U;
         __RW t_uint32 IOPBEN : 0x01U;
         __RW t_uint32 IOPCEN : 0x01U;
@@ -221,8 +221,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_IOPENR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 DMAEN : 0x01U;
         t_uint32 /* RESERVED */ : 0x07U;
         __RW t_uint32 MIFEN : 0x01U;
@@ -239,8 +239,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_AHBENR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 SYSCFGEN : 0x01U;
         t_uint32 /* RESERVED */ : 0x01U;
         __RW t_uint32 TIM21EN : 0x01U;
@@ -261,8 +261,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_APB2ENR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 TIM2EN : 0x01U;
         __RW t_uint32 TIM3EN : 0x01U;
         t_uint32 /* RESERVED */ : 0x02U;
@@ -292,8 +292,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_APB1ENR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 IOPASMEN : 0x01U;
         __RW t_uint32 IOPBSMEN : 0x01U;
         __RW t_uint32 IOPCSMEN : 0x01U;
@@ -306,8 +306,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_IOPSMENR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 DMASMEN : 0x01U;
         t_uint32 /* RESERVED */ : 0x07U;
         __RW t_uint32 MIFSMEN : 0x01U;
@@ -325,8 +325,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_AHBSMENR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 SYSCFGSMEN : 0x01U;
         t_uint32 /* RESERVED */ : 0x01U;
         __RW t_uint32 TIM21SMEN : 0x01U;
@@ -345,8 +345,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_APB2SMENR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 TIM2SMEN : 0x01U;
         __RW t_uint32 TIM3SMEN : 0x01U;
         t_uint32 /* RESERVED */ : 0x02U;
@@ -376,8 +376,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_APB1SMENR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 SART1SEL0 : 0x01U;
         __RW t_uint32 SART1SEL1 : 0x01U;
         __RW t_uint32 SART2SEL0 : 0x01U;
@@ -399,8 +399,8 @@ typedef union __attribute__((packed)) {
     __RW t_uint32 WORD;
 } t_CCIPR;
 
-typedef union __attribute__((packed)) {
-    struct {
+typedef union {
+    struct __attribute__((packed)) {
         __RW t_uint32 LSION : 0x01U;
         __R t_uint32 LSIRDY : 0x01U;
         t_uint32 /* RESERVED */ : 0x06U;

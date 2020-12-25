@@ -10,7 +10,7 @@ const inline t_uint32 BASE_ADDRESS = ((t_uint32)0x40022000U);
 
 namespace TYPEDEFS {
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 LATENCY : 0x01U;
         __RW t_uint32 PRFTEN : 0x01U;
         t_uint32 /* RESERVED */ : 0x01U;
@@ -24,7 +24,7 @@ typedef union {
 } t_ACR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 PE_LOCK : 0x01U;
         __RW t_uint32 PRG_LOCK : 0x01U;
         __RW t_uint32 PROG : 0x01U;
@@ -46,35 +46,35 @@ typedef union {
 } t_PECR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __W t_uint32 PDKEY : 0x01U;
     } BIT;
     __W t_uint32 WORD;
 } t_PDKEYR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __W t_uint32 PKEY : 0x01U;
     } BIT;
     __W t_uint32 WORD;
 } t_PKEYR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __W t_uint32 PRGKEY : 0x01U;
     } BIT;
     __W t_uint32 WORD;
 } t_PRGKEYR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __W t_uint32 OPTKEY : 0x01U;
     } BIT;
     __W t_uint32 WORD;
 } t_OPTKEYR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __R t_uint32 BSY : 0x01U;
         __RW t_uint32 EOP : 0x01U;
         __R t_uint32 ENDHV : 0x01U;
@@ -95,7 +95,7 @@ typedef union {
 } t_SR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __R t_uint32 RDPROT : 0x08U;
         __R t_uint32 WPRMOD : 0x01U;
         t_uint32 /* RESERVED */ : 0x07U;
@@ -111,21 +111,21 @@ typedef union {
 } t_OPTR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __R t_uint32 WRPROT1 : 0x01U;
     } BIT;
     __R t_uint32 WORD;
 } t_WRPROT1R;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __R t_uint32 WRPROT2 : 0x10U;
         t_uint32 /* RESERVED */ : 0x10U;
     } BIT;
     __R t_uint32 WORD;
 } t_WRPROT2R;
 
-typedef struct {
+typedef struct __attribute__((packed)) {
     t_ACR ACR;
     t_PECR PECR;
     t_PDKEYR PDKEYR;

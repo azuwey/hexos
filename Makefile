@@ -31,6 +31,7 @@ CC := $(TOOLCHAIN_PATH)/arm-none-eabi-g++
 LD := $(TOOLCHAIN_PATH)/arm-none-eabi-ld
 CP := $(TOOLCHAIN_PATH)/arm-none-eabi-objcopy
 AS := $(TOOLCHAIN_PATH)/arm-none-eabi-as
+DP := $(TOOLCHAIN_PATH)/arm-none-eabi-objdump
 
 # Compiler flags
 CFLAGS := ${CPP_INCLUDES} -MD -mcpu=$(CPU) -mthumb -std=${STD}
@@ -66,6 +67,9 @@ ${BUILD_DIR}/${TARGET}.elf: $(OBJECTS)
 
 ${BUILD_DIR}/${TARGET}.bin: ${BUILD_DIR}/${TARGET}.elf
 	$(CP) $(CPFLAGS) $^ $@
+
+dump:
+	$(DP) -d -S ${BUILD_DIR}/${TARGET}.elf > ${BUILD_DIR}/${TARGET}.dump
 
 clean:
 	rm -fr $(BUILD_DIR)/*.o $(BUILD_DIR)/*.elf $(BUILD_DIR)/*.bin $(BUILD_DIR)/*.map
