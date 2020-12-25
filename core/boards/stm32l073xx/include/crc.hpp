@@ -51,11 +51,11 @@ typedef union {
 } t_POLR;
 
 typedef struct __attribute__((packed)) {
-    t_DR r_DR;
-    t_IDR r_IDR;
-    t_CR r_CR;
-    t_INITR r_INITR;
-    t_POLR r_POLR;
+    t_DR DR;
+    t_IDR IDR;
+    t_CR CR;
+    t_INITR INITR;
+    t_POLR POLR;
 } t_CRC;
 } // namespace TYPEDEFS
 
