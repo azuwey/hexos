@@ -5,7 +5,7 @@
 
 namespace CRS {
 namespace ADDRESSES {
-const inline t_uint32 BASE_ADDRESS = ((t_uint32)0x40023000U);
+const inline t_uint32 BASE_ADDRESS = ((t_uint32)0x40006C00U);
 } // namespace ADDRESSES
 
 namespace TYPEDEFS {
@@ -20,7 +20,7 @@ typedef union {
         __RW t_uint32 CEN : 0x01U;
         __RW t_uint32 AUTOTRIMEN : 0x01U;
         __RW t_uint32 SWSYNC : 0x01U;
-        __RW t_uint32 SWSYNC : 0x06U;
+        __RW t_uint32 TRIM : 0x06U;
         t_uint32 /* RESERVED */ : 0x12U;
     } b;
     __RW t_uint32 w;
@@ -70,7 +70,7 @@ typedef union {
 typedef struct __attribute__((packed)) {
     t_CR CR;
     t_CFGR CFGR;
-    t_CFGR CFGR;
+    t_ISR ISR;
     t_ICR ICR;
 } t_CRS;
 } // namespace TYPEDEFS

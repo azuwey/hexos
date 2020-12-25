@@ -72,6 +72,10 @@ dump:
 	$(DP) -d -S ${BUILD_DIR}/${TARGET}.elf > ${BUILD_DIR}/${TARGET}.dump
 
 clean:
-	rm -fr $(BUILD_DIR)/*.o $(BUILD_DIR)/*.elf $(BUILD_DIR)/*.bin $(BUILD_DIR)/*.map
+	rm $(BUILD_DIR)/*.o
+	rm $(BUILD_DIR)/*.elf
+	rm $(BUILD_DIR)/*.bin
+	rm $(BUILD_DIR)/*.map
+	rm $(BUILD_DIR)/*.dump
 
 -include $(OBJECTS:.o=.d)
