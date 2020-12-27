@@ -10,7 +10,7 @@ const inline t_uint32 BASE_ADDRESS = ((t_uint32)0x40020000U);
 
 namespace TYPEDEFS {
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __R t_uint32 GIF1 : 0x01U;
         __R t_uint32 TCIF1 : 0x01U;
         __R t_uint32 HTIF1 : 0x01U;
@@ -45,7 +45,7 @@ typedef union {
 } t_ISR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __W t_uint32 CGIF1 : 0x01U;
         __W t_uint32 CTCIF1 : 0x01U;
         __W t_uint32 CHTIF1 : 0x01U;
@@ -80,7 +80,7 @@ typedef union {
 } t_IFCR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 EN : 0x01U;
         __RW t_uint32 TCIE : 0x01U;
         __RW t_uint32 HTIE : 0x01U;
@@ -99,7 +99,7 @@ typedef union {
 } t_CCR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 NDT : 0x10U;
         t_uint32 /* RESERVED */ : 0x10U;
     } BIT;
@@ -107,21 +107,21 @@ typedef union {
 } t_CNDTR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 PA : 0x20U;
     } BIT;
     __RW t_uint32 WORD;
 } t_CPAR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 MA : 0x20U;
     } BIT;
     __RW t_uint32 WORD;
 } t_CMAR;
 
 typedef union {
-    struct {
+    struct __attribute__((packed)) {
         __RW t_uint32 C1S : 0x04U;
         __RW t_uint32 C2S : 0x04U;
         __RW t_uint32 C3S : 0x04U;
@@ -134,7 +134,7 @@ typedef union {
     __RW t_uint32 WORD;
 } t_CSELR;
 
-typedef struct {
+typedef struct __attribute__((packed)) {
     t_ISR ISR;
     t_IFCR IFCR;
     t_CCR CCR1;
