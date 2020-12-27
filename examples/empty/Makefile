@@ -55,7 +55,20 @@ vpath %.cpp $(sort $(dir $(CPP_SOURCES)))
 OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
 
+.PHONY: all
 all: ${BUILD_DIR} ${BUILD_DIR}/${TARGET}.bin
+
+.PHONY: dump
+dump:
+	$(DP) -d -S ${BUILD_DIR}/${TARGET}.elf > ${BUILD_DIR}/${TARGET}.dump
+
+.PHONY: clean
+clean:
+	rm -rf $(BUILD_DIR)/*.o
+	rm -rf $(BUILD_DIR)/*.elf
+	rm -rf $(BUILD_DIR)/*.bin
+	rm -rf $(BUILD_DIR)/*.map
+	rm -rf $(BUILD_DIR)/*.dump
 
 $(BUILD_DIR)/%.o: %.cpp
 	$(CC) $(CFLAGS) -o $@ -c $<
@@ -71,15 +84,5 @@ ${BUILD_DIR}/${TARGET}.bin: ${BUILD_DIR}/${TARGET}.elf
 
 ${BUILD_DIR}:
 	mkdir ${BUILD_DIR}
-
-dump:
-	$(DP) -d -S ${BUILD_DIR}/${TARGET}.elf > ${BUILD_DIR}/${TARGET}.dump
-
-clean:
-	rm $(BUILD_DIR)/*.o
-	rm $(BUILD_DIR)/*.elf
-	rm $(BUILD_DIR)/*.bin
-	rm $(BUILD_DIR)/*.map
-	rm $(BUILD_DIR)/*.dump
 
 -include $(OBJECTS:.o=.d)
