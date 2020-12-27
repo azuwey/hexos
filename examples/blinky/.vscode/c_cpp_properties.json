@@ -1,7 +1,8 @@
 {
     "env": {
         "BOARD": "stm32l073xx",
-        "CPU": "cortex-m0plus"
+        "TOOLCHAIN_PATH": "/usr/bin",
+        "COMPILER": "arm-none-eabi-g++"
     },
     "configurations": [
         {
@@ -11,12 +12,7 @@
                 "${workspaceFolder}/../../core/common/include/*",
                 "${workspaceFolder}/include/**"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/arm-none-eabi-g++",
-            "compilerArgs": [
-                "-mcpu=${CPU}",
-                "-mthumb"
-            ],
+            "compilerPath": "${TOOLCHAIN_PATH}/${COMPILER}",
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "gcc-arm"
