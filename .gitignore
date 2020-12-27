@@ -4,5 +4,4 @@
 *.map
 *.su
 *.cortex*.json
-!build/
-build/*
+examples/**/build/*

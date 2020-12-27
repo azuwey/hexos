@@ -11,20 +11,21 @@ DEBUG := 1 # 0 - OFF, 1 - ON
 DEBUG_LEVEL := -g3
 DEAD_CODE_ELLIMINATION := -ffunction-sections -fdata-sections
 STD := gnu++17
+CORE_PATH = ../../core
 
 CPP_SOURCES := \
-firmware/source/main.cpp
+source/main.cpp
 
 CPP_INCLUDES := \
--I firmware/include \
--I core/common/include \
--I core/boards/$(BOARD)/include
+-I include \
+-I ${CORE_PATH}/common/include \
+-I ${CORE_PATH}/boards/$(BOARD)/include
 
 ASM_SOURCES := \
-core/boards/$(BOARD)/startup.s
+${CORE_PATH}/boards/$(BOARD)/startup.s
 
 # Linker settings
-LINKER_FILE := core/boards/$(BOARD)/linker/$(MODEL).ld
+LINKER_FILE := ${CORE_PATH}/boards/$(BOARD)/linker/$(MODEL).ld
 
 # Toolchain definitions
 CC := $(TOOLCHAIN_PATH)/arm-none-eabi-g++
@@ -54,7 +55,7 @@ vpath %.cpp $(sort $(dir $(CPP_SOURCES)))
 OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
 
-all: ${BUILD_DIR}/${TARGET}.bin
+all: ${BUILD_DIR} ${BUILD_DIR}/${TARGET}.bin
 
 $(BUILD_DIR)/%.o: %.cpp
 	$(CC) $(CFLAGS) -o $@ -c $<
@@ -67,6 +68,9 @@ ${BUILD_DIR}/${TARGET}.elf: $(OBJECTS)
 
 ${BUILD_DIR}/${TARGET}.bin: ${BUILD_DIR}/${TARGET}.elf
 	$(CP) $(CPFLAGS) $^ $@
+
+${BUILD_DIR}:
+	mkdir ${BUILD_DIR}
 
 dump:
 	$(DP) -d -S ${BUILD_DIR}/${TARGET}.elf > ${BUILD_DIR}/${TARGET}.dump

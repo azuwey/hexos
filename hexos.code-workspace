@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"name": "Main",
+			"path": "."
+		},
+		{
 			"name": "Core",
 			"path": "./core"
 		},
@@ -10,7 +14,7 @@
 		},
 		{
 			"name": "Empty example",
-			"path": "./examples/empty",
+			"path": "./examples/empty"
 		}
 	],
 	"settings": {
