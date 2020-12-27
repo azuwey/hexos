@@ -24,8 +24,8 @@ typedef union {
         __RW t_uint32 DS_EE_KOFF : 0x01U;
         __RW t_uint32 LPRUN : 0x01U;
         t_uint32 /* RESERVED */ : 0x11U;
-    } b;
-    __RW t_uint32 w;
+    } BIT;
+    __RW t_uint32 WORD;
 } t_CR;
 
 typedef union {
@@ -41,8 +41,8 @@ typedef union {
         __RW t_uint32 EWUP2 : 0x01U;
         __RW t_uint32 EWUP3 : 0x01U;
         t_uint32 /* RESERVED */ : 0x15U;
-    } b;
-    __RW t_uint32 w;
+    } BIT;
+    __RW t_uint32 WORD;
 } t_CSR;
 
 typedef struct __attribute__((packed)) {

@@ -9,7 +9,6 @@ const inline t_uint32 BASE_ADDRESS = ((t_uint32)0x40006C00U);
 } // namespace ADDRESSES
 
 namespace TYPEDEFS {
-
 typedef union {
     struct __attribute__((packed)) {
         __RW t_uint32 SYNCOKIE : 0x01U;
@@ -22,8 +21,8 @@ typedef union {
         __RW t_uint32 SWSYNC : 0x01U;
         __RW t_uint32 TRIM : 0x06U;
         t_uint32 /* RESERVED */ : 0x12U;
-    } b;
-    __RW t_uint32 w;
+    } BIT;
+    __RW t_uint32 WORD;
 } t_CR;
 
 typedef union {
@@ -35,8 +34,8 @@ typedef union {
         __RW t_uint32 SYNCSRC : 0x02U;
         t_uint32 /* RESERVED */ : 0x01U;
         __RW t_uint32 SYNCPOL : 0x01U;
-    } b;
-    __RW t_uint32 w;
+    } BIT;
+    __RW t_uint32 WORD;
 } t_CFGR;
 
 typedef union {
@@ -52,7 +51,7 @@ typedef union {
         t_uint32 /* RESERVED */ : 0x04U;
         __R t_uint32 FEDIR : 0x01U;
         __R t_uint32 FECAP : 0x10U;
-    } b;
+    } BIT;
     __R t_uint32 w;
 } t_ISR;
 
@@ -63,8 +62,8 @@ typedef union {
         __RW t_uint32 ERRC : 0x01U;
         __RW t_uint32 ESYNCC : 0x01U;
         t_uint32 /* RESERVED */ : 0x1CU;
-    } b;
-    __RW t_uint32 w;
+    } BIT;
+    __RW t_uint32 WORD;
 } t_ICR;
 
 typedef struct __attribute__((packed)) {
