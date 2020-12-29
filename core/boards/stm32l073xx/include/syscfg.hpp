@@ -30,7 +30,7 @@ typedef union {
         __RW t_uint32 I2C_PB6_FMP : 0x01U;
         __RW t_uint32 I2C_PB7_FMP : 0x01U;
         __RW t_uint32 I2C_PB8_FMP : 0x01U;
-        __RW t_uint32 I2C_PB6_FMP : 0x01U;
+        __RW t_uint32 I2C_PB9_FMP : 0x01U;
         __RW t_uint32 I2C1_FMP : 0x01U;
         __RW t_uint32 I2C2_FMP : 0x01U;
         __RW t_uint32 I2C3_FMP : 0x01U;
