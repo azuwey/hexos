@@ -452,13 +452,6 @@ typedef struct __attribute__((packed)) {
     t_CSR CSR;
 } t_RCC;
 } // namespace TYPEDEFS
-
-namespace HAL {
-extern unsigned int _externalOscillatorFrequency;
-
-void setExternalOscillatorFrequency(unsigned int externalOscillatorFrequency);
-unsigned int getMainCPUClockFrequency(void);
-} // namespace HAL
 } // namespace RCC
 
 namespace REGISTERS {

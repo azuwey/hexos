@@ -30,7 +30,7 @@
 #include "flash.hpp"
 #include "gpio.hpp"
 #include "pwr.hpp"
-#include "rcc.hpp"
+#include "rcc_hal.hpp"
 #include "syscfg.hpp" // This contains access for the comp registers
 
 #endif // __STM32L073XX_MODULES

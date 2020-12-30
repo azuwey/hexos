@@ -2,7 +2,8 @@
     "env": {
         "BOARD": "stm32l073xx",
         "TOOLCHAIN_PATH": "/usr/bin",
-        "COMPILER": "arm-none-eabi-g++"
+        "COMPILER": "arm-none-eabi-g++",
+        "EXTERNAL_OSCILLATOR_FREQUENCY": "0x7A1200U"
     },
     "configurations": [
         {
@@ -11,6 +12,9 @@
                 "${workspaceFolder}/../../core/boards/${BOARD}/include/*",
                 "${workspaceFolder}/../../core/common/include/*",
                 "${workspaceFolder}/include/**"
+            ],
+            "compilerArgs": [
+                "-D EXTERNAL_OSCILLATOR_FREQUENCY=${EXTERNAL_OSCILLATOR_FREQUENCY}"
             ],
             "compilerPath": "${TOOLCHAIN_PATH}/${COMPILER}",
             "cStandard": "gnu17",

@@ -1,7 +1,9 @@
 {
     "env": {
         "BOARD": "stm32l073xx",
-        "CPU": "cortex-m0plus"
+        "TOOLCHAIN_PATH": "/usr/bin",
+        "COMPILER": "arm-none-eabi-g++",
+        "EXTERNAL_OSCILLATOR_FREQUENCY": "0x7A1200U"
     },
     "configurations": [
         {
@@ -10,12 +12,10 @@
                 "${workspaceFolder}/boards/${BOARD}/include/*",
                 "${workspaceFolder}/common/include/*"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/arm-none-eabi-g++",
             "compilerArgs": [
-                "-mcpu=${CPU}",
-                "-mthumb"
+                "-D EXTERNAL_OSCILLATOR_FREQUENCY=${EXTERNAL_OSCILLATOR_FREQUENCY}"
             ],
+            "compilerPath": "${TOOLCHAIN_PATH}/${COMPILER}",
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "gcc-arm"

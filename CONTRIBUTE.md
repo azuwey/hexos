@@ -1,6 +1,6 @@
 ## Code format
 
-Code format based on LLVM, with these options IndentWidth: 4 and ColumnLimit: 140
+Code format based on LLVM, with these options IndentWidth: 4 and ColumnLimit: 90
 
 ## Recommended IDE
 

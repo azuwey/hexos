@@ -5,3 +5,4 @@
 *.su
 *.cortex*.json
 examples/**/build/*
+projects/**/

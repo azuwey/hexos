@@ -18,7 +18,7 @@
 		}
 	],
 	"settings": {
-		"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 140 }",
+		"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 90 }",
 		"C_Cpp.default.cppStandard": "gnu++17",
 		"C_Cpp.default.cStandard": "gnu17",
 		"cortex-debug.enableTelemetry": false,
@@ -26,5 +26,8 @@
 		"editor.formatOnSave": true,
 		"c-cpp-flylint.flexelint.enable": false,
 		"c-cpp-flylint.clang.enable": false,
+		"files.associations": {
+			"cassert": "cpp"
+		},
 	}
 }
